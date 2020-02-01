@@ -1,0 +1,7 @@
+<button type="button" class="btn btn-primary" [routerLink]="['/cities/',id ]">try get Vancouve weather</button>
+<!-- <button type="button" class="btn btn-primary" routerLink='/cities/detail'>detail</button> -->
+
+
+<div *ngFor="let item of citylist">
+    <app-list-item [city]="item"></app-list-item>
+</div>

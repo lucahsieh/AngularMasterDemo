@@ -1,0 +1,41 @@
+{
+    "cityList": [
+        {
+            "id": 6173331,
+            "name": "Vancouver",
+            "country": "CA",
+            "coord": {
+                "lon": -123.119339,
+                "lat": 49.24966
+            }
+        },
+        {
+            "id": 5911606,
+            "name": "Burnaby",
+            "country": "CA",
+            "coord": {
+                "lon": -122.952629,
+                "lat": 49.266361
+            }
+        },
+        {
+            "id": 6090786,
+            "name": "North Vancouver",
+            "country": "CA",
+            "coord": {
+                "lon": -123.069344,
+                "lat": 49.36636
+            }
+        },
+        {
+            "id": 6174041,
+            "name": "Victoria",
+            "country": "CA",
+            "coord": {
+                "lon": -123.369301,
+                "lat": 48.432941
+            }
+        }
+    ],
+    "second": []
+}
