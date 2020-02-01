@@ -28,8 +28,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # AngularMasterDemo
 
 # Feature Implemented
-⋅⋅* local Json server (fake api calls)
-⋅⋅* real get api call template
-⋅⋅* routing bewteen/within module
-⋅⋅* feature modular design
-⋅⋅* folder structure best practice
+ * local Json server (fake api calls)
+ * real get api call template
+ * routing bewteen/within module
+ * feature modular design
+ * folder structure best practice
