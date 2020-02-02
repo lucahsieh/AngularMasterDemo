@@ -1,4 +1,4 @@
-export class Employee {
+export interface Employee {
     employeeId: number;
     jobTitleId: number;
     employeeFirstName: string;
@@ -8,5 +8,5 @@ export class Employee {
     timesheetApprover: Employee;
     isAdmin: boolean;
     isProjectManager: boolean;
-    isHumanResources: boolean; 
+    isHumanResources: boolean;
 }

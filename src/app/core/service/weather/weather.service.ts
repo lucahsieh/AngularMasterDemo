@@ -27,6 +27,7 @@ export class WeatherService {
     return this.http
       .get<CurrentWeather>(url)
       .pipe(
+        map(result => new CurrentWeather(result)),
         tap(_ => this.alertUser('fetched weather')),
         catchError(this.handleError<CurrentWeather>(`getWeatherByCityid=${id}`))
       )
