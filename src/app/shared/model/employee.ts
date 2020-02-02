@@ -2,6 +2,7 @@ export class Employee {
     employeeId: number;
     jobTitleId: number;
     employeeFirstName: string;
+    employeeLastName: string;
     username: string;
     password: string;
     supervisor: Employee;

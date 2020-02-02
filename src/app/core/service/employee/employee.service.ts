@@ -3,7 +3,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { MessageService } from '../message.service';
 import { Observable, of } from 'rxjs';
 import {Employee} from 'src/app/shared/model/employee';
-import { catchError, tap } from 'rxjs/operators';
+import {Credential} from 'src/app/shared/model/credential';
+import { catchError, tap, map } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -26,7 +27,27 @@ import { catchError, tap } from 'rxjs/operators';
         return this.http
           .get<Employee[]>(url)
           .pipe(
-        
-          )
-  }
+            
+          ) 
+        }
+
+      login(): Observable<Credential>{
+          let url = "https://localhost:44318/api/Credentials/Authenticate";
+          let newCred = {"CredentialId":"A100001", "Password" : "password"};
+          return this.http.post<Credential>(url, newCred, this.httpOptions)
+          .pipe()
+      }
+
+      getAvailableUsername(auth_token): Observable<Employee[]> {
+          let headers = new HttpHeaders({
+              'Content-Type' : 'application/json',
+              'Authorization':  'Bearer ' + auth_token
+          })
+        let url = `https://localhost:44318/api/Credentials/AvailableUsername`;
+        return this.http
+          .get<Employee[]>(url, {headers: headers})
+          .pipe(
+            
+          ) 
+        }
 }
