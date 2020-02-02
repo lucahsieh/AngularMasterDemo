@@ -8,7 +8,7 @@ import { LoginLayoutComponent } from './core/layout/login-layout/login-layout.co
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'content',
+    redirectTo: 'cities',
     canActivate: [AuthGuard],
     pathMatch: 'full'
   },

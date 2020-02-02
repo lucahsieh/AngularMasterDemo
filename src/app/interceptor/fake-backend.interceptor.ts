@@ -21,10 +21,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
         function handleRoute() {
             switch (true) {
-                case url.endsWith('/users/authenticate') && method === 'POST':
-                    return authenticate();
-                case url.endsWith('/users') && method === 'GET':
-                    return getUsers();
+                //comment out all cases and use default instead when testing with real backend
+                // case url.endsWith('/users/authenticate') && method === 'POST':   
+                //     return authenticate();
+                // case url.endsWith('/users') && method === 'GET':
+                //     return getUsers();
                 default:
                     // pass through any requests not handled above
                     return next.handle(request);
