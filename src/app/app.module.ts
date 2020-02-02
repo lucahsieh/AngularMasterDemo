@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
 import { NavComponent } from './core/layout/nav/nav.component';
 import { ContentLayoutComponent } from './core/layout/content-layout/content-layout.component';
-import { JwtInterceptor } from './interceptor/jwt.interceptor';
-import { ErrorInterceptor } from './interceptor/error.interceptor';
-import { fakeBackendProvider } from './interceptor/fake-backend.interceptor';
-import { AuthGuard } from './guard/auth.guard';
+import { JwtInterceptor } from './core/interceptor/jwt.interceptor';
+import { ErrorInterceptor } from './core/interceptor/error.interceptor';
+import { fakeBackendProvider } from './core/interceptor/fake-backend.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginLayoutComponent } from './core/layout/login-layout/login-layout.component';
+import { AuthGuard } from './core/guard/auth.guard';
 
 @NgModule({
   declarations: [
