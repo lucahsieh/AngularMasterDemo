@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContentLayoutComponent } from './core/layout/content-layout/content-layout.component';
+import { AuthGuard } from './core/guard/auth.guard';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {
     path: '',
     component: ContentLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'cities',
@@ -20,9 +22,16 @@ const routes: Routes = [
       {
         path: 'employee',
         loadChildren: () => import('./modules/employee/employee.module').then(m => m.EmployeeModule)
-      }
+      },
     ]
   },
+  {
+    path: 'auth',
+    component: ContentLayoutComponent,
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+  },
+  // Fallback when no prior routes is matched
+  { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
 ];
 
 @NgModule({
