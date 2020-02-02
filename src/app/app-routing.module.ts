@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContentLayoutComponent } from './core/layout/content-layout/content-layout.component';
-import { AuthGuard } from './core/guard/auth.guard';
+import { AuthGuard } from './guard/auth.guard';
+import { LoginLayoutComponent } from './core/layout/login-layout/login-layout.component';
 
 
 const routes: Routes = [
-  // {
-  //   path:'',
-  //   redirectTo:'content',
-  //   pathMatch:'full'
-  // },
+  {
+    path: '',
+    redirectTo: 'content',
+    canActivate: [AuthGuard],
+    pathMatch: 'full'
+  },
   {
     path: '',
     component: ContentLayoutComponent,
-    canActivate: [AuthGuard],
+
     children: [
       {
         path: 'cities',
@@ -27,11 +29,11 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    component: ContentLayoutComponent,
+    component: LoginLayoutComponent,
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
-  // Fallback when no prior routes is matched
-  { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
+  // // Fallback when no prior routes is matched
+  // { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
 ];
 
 @NgModule({

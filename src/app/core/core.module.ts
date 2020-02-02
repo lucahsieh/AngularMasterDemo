@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthGuard } from './guard/auth.guard';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { LoginLayoutComponent } from './layout/login-layout/login-layout.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [LoginLayoutComponent],
   imports: [
     CommonModule
   ],
   providers: [
-    AuthGuard
   ]
 })
 export class CoreModule { }
